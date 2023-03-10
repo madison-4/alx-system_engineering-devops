@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ma1
+ls -a1mp
