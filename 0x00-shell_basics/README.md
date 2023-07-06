@@ -36,6 +36,14 @@ a script that copies all the HTML files from the current working directory
 to the parent of the working directory, but only copyfiles that did not exist
 in the parent of the working directory or were newer than
 the versions in the parent of the working directory.
+## 100-lets_move
+Moves all files with an nuppercase letter
+## 101-clean_emacs
+deletes all files ending with ~
+## 102-tree
+creates several directories in succession in the current directory
+## 103-commas
+list files oredered but using commas not lines
 
 # Author
 madison-4/nox
