@@ -1,5 +1,5 @@
 # About
-11;rgb:0000/0000/0000This directory contains short scripts for several shell permissions
+This directory contains short scripts for several shell permissions
 ## 0-iam_betty
 Change the user to Betty
 ## 1-who_am_i
@@ -31,6 +31,13 @@ add execute permission for all subdirectories
 create a directory with permissions
 ## 13-change_group
 change group owner
-
+## 100-change_owner_and_group
+change the owner and group of all files and directories
+## 101-symbolic_link_permissions
+change permissions of symbolic links
+## 102-if_only
+change ownership if only owned by aniother
+## 103-Star_Wars
+watch star wars on the terminal
 # Author
 madison-4/nox - authored all files after doing research
