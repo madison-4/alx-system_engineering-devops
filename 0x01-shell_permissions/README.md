@@ -1,5 +1,5 @@
 # About
-This directory contains short scripts for several shell permissions
+11;rgb:0000/0000/0000This directory contains short scripts for several shell permissions
 ## 0-iam_betty
 Change the user to Betty
 ## 1-who_am_i
@@ -25,6 +25,12 @@ denyother users read permission
 give owner all permissions
 ## 10-mirror_permissions
 set permissions of a file to match another
+## 11-directories_permissions
+add execute permission for all subdirectories
+## 12-directory_permissions
+create a directory with permissions
+## 13-change_group
+change group owner
 
 # Author
 madison-4/nox - authored all files after doing research
