@@ -1,6 +1,6 @@
 # About
 This project is about redirections of different commands and special characters
-## 0-hello_world
+## 0-hello_wor
 prints Hello, World to the stdou
 ## 1-confused_smiley
 displays a confused smiley
@@ -20,6 +20,9 @@ create a file
 write command output to a file
 ## 9-duplicate_last_line
 duplicate the last line
-
+## 10-no_more_js
+delete files with .js extensions
+## 11-directories
+count directories
 # Author
 madison-4/nox
