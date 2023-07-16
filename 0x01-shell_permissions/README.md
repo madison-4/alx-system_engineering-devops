@@ -39,5 +39,6 @@ change permissions of symbolic links
 change ownership if only owned by aniother
 ## 103-Star_Wars
 watch star wars on the terminal
+For this command, ensure you've got te correct access to the site
 # Author
 madison-4/nox - authored all files after doing research

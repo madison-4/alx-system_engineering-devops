@@ -1,5 +1,7 @@
 # About
 This directory holds files on simple scripts for basic nshell commands
+Now the files have to be made executable (chmod a+x) to be run
+On bash type 'man ch' to learm more about file permissions
 ## 0-current_working_directory
 Print the current working directory
 ## 1-listit
