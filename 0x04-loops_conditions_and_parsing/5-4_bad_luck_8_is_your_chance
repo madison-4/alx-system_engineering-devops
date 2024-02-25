@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script print Best School 10 times using the while loop
+# It also tests using if and elif for some iter
+
+i=1
+while [ $i -lt 11 ]
+do
+    if [ $i = 4 ]
+    then
+	echo "bad luck"
+	i=$(( i + 1 ))
+	continue
+    elif [ $i = 8 ]
+    then
+	echo "good luck"
+	i=$(( i + 1 ))
+	continue
+    fi
+echo "Best School"
+	i=$(( i + 1 ))
+done
