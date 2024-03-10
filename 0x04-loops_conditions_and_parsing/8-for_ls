@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # make ls
 
-for file if `ls *`
-    echo $file
+for file in *
+do
+    name=${file#*-}
+    echo "$name"
+done
