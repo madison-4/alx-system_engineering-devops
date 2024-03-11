@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
+# This script is displaying "Best School" 100 times
 counter=0
 while ((counter++<100)); do
     if (( counter % 3 == 0 && counter % 5 == 0 )); then
