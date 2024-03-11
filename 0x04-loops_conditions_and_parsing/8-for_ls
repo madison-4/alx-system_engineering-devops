@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # a module to print file names after dash
 
-while (
+for file in *
+do
+    echo ${file#*-}
+done
