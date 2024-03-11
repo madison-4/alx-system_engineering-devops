@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# make a script to check if a file exists
-# Then check how it orks
-
-if [ -e "school" ]
-then
-	echo 
