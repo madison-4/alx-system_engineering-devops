@@ -1,17 +1,4 @@
 #!/usr/bin/env bash
-# a script to display names after dash
+# a module to print file names after dash
 
-for file in  *
-do
-    for letter in $file
-    do
-	if [[ $letter -ne '-' ]]
-	then
-	    continue
-	else
-	    echo $file
-	fi
-    done
-    
-    echo $file
-done
+while (
