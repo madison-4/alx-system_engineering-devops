@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# a script to print the ip address abd http code
+# It parses an apache log file
+
+awk '{print $1" "$9}' apache-access.log | uniq -c | sort -rn
