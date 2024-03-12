@@ -2,4 +2,4 @@
 # a script to print the ip address abd http code
 # It parses an apache log file
 
-awk '{print $1" "$9}' apache-access.log | sort | uniq -c | sort -rn
+awk '{print $1" "$9}' apache-access.log | sort -urn #| uniq -c | sort -rn
