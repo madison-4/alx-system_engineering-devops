@@ -2,20 +2,8 @@
 # A script to read contents of the etc/passwd file
 # Then it delimits them giving username =, id and home dir
 
-IFS=$'\n'
-count=0
-for line in $(cat '/etc/passwd')
+while IFS= read -r line
 do
-	IFS=':'
-	read -a words <<<${line}
-	# creates an array words from line
-	for i in "${!words[*]}"
-	do
-	    count++
-	    if [ [${count = 0}] || [ ${count = 2} ] || [ ${count = 5} ] ]
-	    then
-		echo -n "${words[count]}"
-	    fi
-	    echo ""
-	done
-done
+	cut -d ':' -f1,3,6<<<"$line"
+done<'/etc/passwd'
+
