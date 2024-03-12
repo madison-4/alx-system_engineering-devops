@@ -3,16 +3,18 @@
 # Then it delimits them giving username =, id and home dir
 
 IFS=$'\n'
-
+count=0
 for line in $(cat '/etc/passwd')
 do
 	IFS=':'
 	read -a words <<<${line}
+	# creates an array words from line
 	for i in "${!words[*]}"
 	do
-	    if ( ($i = 0) || ($i = 2) || ($i = 5))
+	    count++
+	    if [ [${count = 0}] || [ ${count = 2} ] || [ ${count = 5} ] ]
 	    then
-		echo -n "$words[i]"
+		echo -n "${words[count]}"
 	    fi
 	    echo ""
 	done
