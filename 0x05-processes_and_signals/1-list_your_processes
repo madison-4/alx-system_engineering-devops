@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # a script to display cirrnet running processes
 
-ps -axjf
+ps -axuf
