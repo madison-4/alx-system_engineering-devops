@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# connects tpo the serve uasing ssh
+
+ssh ubuntu@54.160.91.121 -i ~/.ssh/school
