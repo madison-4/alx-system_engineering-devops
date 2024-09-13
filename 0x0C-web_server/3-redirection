@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# configure a nginx server on ubuntu so /redirect_me moves to a new page
+# It is a permanent redirect
+
+apt-get update -y
+apt-get install nginx -y
+
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
+
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=3oPEKw-qS1A&list=RD3oPEKw-qS1A&start_radio=1&ab_channel=Rayvanny;
+    }
+}" > /etc/nginx/sites-available/default
