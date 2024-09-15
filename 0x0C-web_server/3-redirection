@@ -17,9 +17,8 @@ CONFIG_FILE="/etc/nginx/sites-available/my_config"
 cat << EOF > "$CONFIG_FILE"
 server {
     listen 80;
-    server_name localhost;
 
-    root /var/www/html;
+    root /;
     index index.html index.htm;
 
     location / {
