@@ -32,7 +32,7 @@ EOF
 
 # Enable the new config
 sudo ln -s "$CONFIG_FILE" "/etc/nginx/sites-enabled/"
-
+sudo rm /etc/nginx/sites-enabled/default
 # Test Nginx configuration
 sudo nginx -t
 
