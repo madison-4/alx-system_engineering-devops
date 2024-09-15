@@ -1,20 +1,43 @@
 #!/usr/bin/env bash
-# configure a nginx server on ubuntu so /redirect_me moves to a new page
-# It is a permanent redirect
 
-apt-get update -y
-apt-get install nginx -y
+# Configure Nginx server so that /redirect_me is redirecting to another page
+# redirection must be a “301 Moved Permanently”
+set -e
 
-printf %s "
-http
-{
-	server {
-    	listen 80;
-    	root   /;
+REDIRECT_URL="https://www.youtube.com/watch?v=QH2-TGUlwu4"
 
-    	location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=3oPEKw-qS1A&list=RD3oPEKw-qS1A&start_radio=1&ab_channel=Rayvanny;
-    	}
-    	}
-}" > /etc/nginx/nginx.conf
-nginx -s reload
+# Check if Nginx is already installed
+if ! command -v nginx &> /dev/null; then
+    sudo apt-get update
+    sudo apt-get install -y nginx
+fi
+
+# Create a backup of the default config
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+# Create a new config file
+CONFIG_FILE="/etc/nginx/sites-available/my_config"
+cat << EOF > "$CONFIG_FILE"
+server {
+    listen 80;
+    server_name localhost;
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+
+    rewrite ^/redirect_me $REDIRECT_URL permanent;
+}
+EOF
+
+# Enable the new config
+sudo ln -s "$CONFIG_FILE" "/etc/nginx/sites-enabled/"
+
+# Test Nginx configuration
+sudo nginx -t
+
+# Restart Nginx
+sudo nginx -s reload
