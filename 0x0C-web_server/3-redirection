@@ -14,3 +14,4 @@ sudo allow 'Nginx HTTP'
 echo Hellow 'World!' > /var/www/html/index.html
 sed -i ':listen 80 default_server:a :return 301
 ; https://blog.nginx.org/blog/creating-nginx-rewrite-rules:' > /etc/nginx/site-available/default
+nginx -s restart
