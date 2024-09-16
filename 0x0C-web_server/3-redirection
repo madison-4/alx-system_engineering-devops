@@ -12,28 +12,6 @@ sudo apt-get install -y nginx
 # Create a backup of the default config
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
-# Create a new config file
-CONFIG_FILE="/etc/nginx/sites-available/my_config"
-cat << EOF > "$CONFIG_FILE"
-server {
-    listen 80;
-
-    root /;
-    index index.html index.htm;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-
-    rewrite ^/redirect_me $REDIRECT_URL permanent;
-}
-EOF
-
-# Enable the new config
-sudo ln -s "$CONFIG_FILE" "/etc/nginx/sites-enabled/"
-sudo rm /etc/nginx/sites-enabled/default
-# Test Nginx configuration
-sudo nginx -t
-
-# Restart Nginx
-sudo nginx -s reload
+sudo allow 'Nginx HTTP'
+echo Hellow 'World!' > /var/www/html/index.html
+sed -i ':listen 80 default_server:a :return 301; https://blog.nginx.org/blog/creating-nginx-rewrite-rules:'
