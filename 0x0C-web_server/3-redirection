@@ -6,7 +6,8 @@ set -e
 sudo apt-get update -y
 sudo apt-get install -y nginx
 
-sudo allow 'Nginx HTTP'
-sh -c 'echo "Hello World!" > /var/www/html/index.html'
-sed -i '/listen 80 default_server/a ^/rewrite redirect_me https://blog.nginx.org/blog/creating-nginx-rewrite-rules permannent' /etc/nginx/sites-available/default
-service nginx -s restart
+sudo ufw allow 'Nginx HTTP'
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.html'
+sudo sed -i '/listen 80 default_server/a ^/rewrite redirect_me https://blog.nginx.org/blog/creating-nginx-rewrite-rules permannent' /etc/nginx/sites-available/default
+sudo sed -i ':root /
+nginx -s reload
