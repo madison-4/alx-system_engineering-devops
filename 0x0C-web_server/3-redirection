@@ -10,7 +10,7 @@ sudo ufw allow 'Nginx HTTP'
 sudo sh -c 'echo "Hello World!" > /var/www/html/index.html'
 sudo sed -i '&listen 80 default_server&a &location /redirect_me
 {
-return 301 https://blog.nginx.org/blog/creating-nginx-rewrite-rules' /etc/nginx/sites-available/default;
+return 301 https://blog.nginx.org/blog/creating-nginx-rewrite-rules&' /etc/nginx/sites-available/default;
 }
 # sudo sed -i ':root /
 nginx -t
