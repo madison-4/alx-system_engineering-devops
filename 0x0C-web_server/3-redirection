@@ -7,7 +7,7 @@ set -e
 
 
 # Upadating Packages before Installations
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install -y nginx
 
 # Creating an index.html page
@@ -19,3 +19,5 @@ sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled
 
 # Restarting Nginx service
 sudo service nginx restart
+sudo nginx -t
+sudo nginx -s reload
