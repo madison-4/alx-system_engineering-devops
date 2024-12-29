@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This file changes the ip addresses in the local dns
+
+cp /etc/hosts changes
+sed -i 's/127.0.0.1	localhost/127.0.0.2	localhost/g'	changes
+sed -i -e 's/* facebook.com/8.8.8.8		facebook.com/g' changes
+cp -f changes /etc/hosts
